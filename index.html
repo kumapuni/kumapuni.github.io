@@ -1,427 +1,265 @@
 <!DOCTYPE html>
- 
-<html lang="ja" xml:lang="ja">
+<html lang="ja">
+
 <head>
-<meta charset="utf-8" />
-<title>Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
- 
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous" />
-<script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-<style>
-        /*ページ全体の構成*/
-        body,li {
-            color: #4d4d4d;
-            font-size: 14px;
-            font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "Osaka", "MS PGothic", sans-serif;
-            margin: 0;
-        }
-        a:link {
-            color: #4d4d4d;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #6e7574;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: #6e7574;
-            text-decoration: none;
-        }
-        ul{
-            padding: 0;
-            margin: 0;
-        }
-        li{
-            list-style: none;
-        }
-        .hover-option:hover {
-            opacity: 0.5;
-        }
-        /*全体の設定*/
-        .wrap{
-            width: 100%;
-            display: block;
-            background: #fff;
-        }
-        /*ヘッダーの設定*/
-        .header{
-            width: 100%;
-            color: #fff;
-            text-align: center;
-            /*ヘッダーの背景設定*/
-            width: 100%;
-            color: #fff;
-            text-align: center;
-            height: 450px;
-            background: url(//kumapuni.web.fc2.com/kumapuni/picture/yumekawab01_.jpg/) center center / 100% auto no-repeat scroll;
-            background-size: cover;
-            font-family: 'object-fit: cover;';
-        }
-        @media all and (-ms-high-contrast: none){/* IE対策 */
-            .wrapHeader-sitenameWrap-{
-                position: relative;
-                top: 50px;
-            }
-        }
-        /*サイトのタイトルの設定*/
-        ul.headerList {
-            display: flex;
-            justify-content: space-around;
-            align-items: baseline;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .siteName {
-            font-size: 40px;
-            font-weight: bold;
-            color: #fff !important;
-        }
-        .mail{
-            font-size: 23px;
-            color: #fff !important;
-        }
-
-        /*サイトのタイトルの750px以下の設定*/
-        @media screen and (max-width :750px){
-            .header{/*ヘッダーの背景設定*/
-                width: 100%;
-                color: #fff;
-                text-align: center;
-                height: 200px;
-                background: url(//kumapuni.web.fc2.com/kumapuni/picture/yumekawab01_.jpg) center center / 100% auto no-repeat scroll;
-                background-size: cover;
-                font-family: 'object-fit: cover;';
-                /*ヘッダーの背景設定*/
-            }
-            @media all and (-ms-high-contrast: none){/* IE対策 */
-                .wrapHeader-sitenameWrap-{
-                    position: relative;
-                    top: 50px;
-                }
-            }
-            ul.headerList {
-                justify-content: space-between;
-            }
-            .siteName {
-                font-size: 30px;
-            }
-            .mail {
-                font-size: 20px;
-            }
-        }
-        /*main部分の設定*/
-        .main {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .mail a{
-            color: #fff;
-        }
-        .mail a:visited{
-            color: #fff;
-            text-decoration: none;
-        }
-        /*メイン*/
-        .mainHeader {
-            position: relative;
-            padding: 100px 0 50px;
-            text-align: center;
-        }
-        .mainHeader_icon {/*アイコンの設定*/
-            width: 130px;
-            height: 130px;
-            margin: 0 auto;
-            position: absolute;
-            top: -65px;
-            right: 0;
-            left: 0;
-        }
-        .mainHeader_info {
-            margin: 0 0 15px;
-        }
-        .mainHeader_icon img{/*画像アイコンの設定*/
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            font-family: 'object-fit: cover;';
-            border-radius: 50%;
-            border: 3px solid #fff;
-        }
-        .mainHeader_sns{/*snsの文字部分*/
-            display: flex;
-            justify-content: center;
-        }
-        .mainHeader_sns li {
-            margin: 0 5px;
-            width: 120px;
-            height: 30px;
-            border: 1px solid #f1e4c3;
-            color: #4d4d4d;
-            vertical-align: middle;
-            position: relative;
-        }
-        .mainHeader_sns li a {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-            height: 19px;
-        }
-        /*サイトのmain部分の750px以下の設定*/
-        @media screen and (max-width :750px){
-            .main {
-                padding: 0 20px;
-            }
-        }
-        /*mainNews領域の設定*/
-        .mainNews{/*news全体の設定*/
-            height: 35px;
-            margin: 0 0 30px;
-            background: #f1e4c3;
-            display: flex;
-            align-items: center;
-        }
-        .mainNews_title {/*newsタイトルの設定*/
-            font-weight: bold;
-            margin: 0 20px;
-        }
-        .mainNews_info {/*news内容の設定*/
-            padding: 0 20px 0;
-            border-left: 1px solid #dad0b6;
-        }
-        @media screen and (max-width :750px){
-            .mainNews {
-                height: auto;
-                margin: 0 0 30px;
-                padding: 10px 20px;
-                background: #f1e4c3;
-                display: block;
-            }
-            .mainNews_title {
-                font-weight: bold;
-                text-align: center;
-                font-size: 20px;
-            }
-            .mainNews_info {
-                padding: 0;
-                border-left: none;
-            }
-        }
-        /*menu領域の設定*/
-        .mainMenu_title {
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        .mainMenu_title:after {
-            border-top: 1px solid;
-            content: "";
-            margin: 0 0 0 20px;
-            width: 100%;
-        }
-        /*menuの下層部分の設定*/
-        .mainMenu_list {
-            padding: 20px;
-        }
-        .mainMenu_listwrap {
-            margin: 0 0 20px 0;
-        }
-        .mainMenu_listwrap_item {
-            padding: 0 0 10px 0;
-            display: flex;
-            border-bottom: 1px solid #ccc;
-        }
-        .mainMenu_listwrap_itemTitle {
-            width: 60px;
-            margin: 0 20px 0 0;
-        }
-        .mainMenu_listwrap_item:hover {
-            opacity: 0.5;
-        }
-        /*サイトのmain部分の750px以下の設定*/
-        @media screen and (max-width :750px){
-            .mainMenu_title {
-                text-align: center;
-                font-size: 20px;
-                display: block;
-            }
-            .mainMenu_title:after {
-                border-top:none;
-                content: none;
-                margin: 0 ;
-                width: 100%;
-            }
-        }
-        /*topページgalleryの設定*/
-        .mainGallery {
-            margin: 0 0 60px 0;
-        }
-        .mainGallery_title {
-            margin: 0 0 20px 0;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        .mainGallery_title:after {
-            border-top: 1px solid;
-            content: "";
-            margin: 0 0 0 20px;
-            width: 100%;
-        }
-        ul.mainGallery_list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 0 0 20px;
-        }
-        .mainGallery_listItem {
-            width: 90px;
-            height: 90px;
-        }
-        .mainGallery_listItem img {
-            width: 100%;
-            height: 100%;
-        }
-        @media screen and (max-width :750px){
-            .mainGallery_title {
-                text-align: center;
-                font-size: 20px;
-                display: block;
-            }
-            .mainGallery_title:after {
-                border-top:none;
-                content: none;
-                margin: 0 ;
-                width: 100%;
-            }
-            ul.mainGallery_list {
-                justify-content: space-around;
-            }
-            .mainGallery_listItem {
-                max-width: 150px;
-                max-height: 150px;
-                width: auto;
-                height: auto;
-                margin: 0 5px 20px 5px;
-            }
-        }
-        /*footer*/
-        .footer {/*footer部分の設定*/
-            background: #f1e4c3;
-            text-align: center;
-            padding: 30px;
-            font-size: 12px;
-        }
-        .sns {
-            display: flex;
-            justify-content: center;
-        }
-        .sns li {
-            width: 42px;
-            margin: 0 5px 5px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>くまぷにのお部屋</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fuwaimg.css">
+  <script src="js/jquery.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Kulim+Park|M+PLUS+1p&display=swap" rel="stylesheet">
 </head>
-<body id="top">
-<div class="wrap">
-<div class="header">
-<ul class="headerList">
-<li class="siteName"><img src="https://kumapuni.web.fc2.com/picture/yumekawab01_.jpg" alt="" /></li>
-<li class="mail"><a href="#" class="hover-option"><i class="far fa-envelope"></i>MAIL</a></li>
-</ul>
-</div>
-<!--Header-->
-<div class="main">
-<div class="mainHeader">
-<div class="mainHeader_icon"><img src="https://kumapuni.web.fc2.com/picture/1703504496785.jpeg" alt="アイコン" width="1" height="1" /></div>
-<div class="mainHeader_info">のん（くまぷに）の個人サイトです</div>
-<ul class="mainHeader_sns">
-<li><a href="https://bsky.app/profile/kumapuni.bsky.social" class="hover-option">BlueSky</a></li>
-<li><a href="https://instagram.com/non.shimomu" class="hover-option">Instagram</a></li>
-</ul>
-</div>
-<div class="mainNews">
-<div class="mainNews_title">NEWS</div>
-<div class="mainNews_info">ホームページ新規開設しました</div>
-</div>
-<div class="mainMenu">
-<div class="mainMenu_title">menu</div>
-<ul class="mainMenu_list">
-<li class="mainMenu_listwrap">
-<div class="mainMenu_listwrap_item">
-<div class="mainMenu_listwrap_itemTitle"><a href="https://kumapuni.web.fc2.com/about.html">About</a></div>
-<div class="mainMenu_listwrap_itemInfo"><a href="https://kumapuni.web.fc2.com/about.html">このサイトについて</a></div>
-</div>
-</li>
-<li class="mainMenu_listwrap">
-<div class="mainMenu_listwrap_item">
-<div class="mainMenu_listwrap_itemTitle">Work</div>
-<div class="mainMenu_listwrap_itemInfo">お仕事・お手伝いについて</div>
-</div>
-</li>
-<li class="mainMenu_listwrap">
-<div class="mainMenu_listwrap_item">
-<div class="mainMenu_listwrap_itemTitle">Gallery</div>
-<div class="mainMenu_listwrap_itemInfo">作品集・実質倉庫</div>
-</div>
-</li>
-<li class="mainMenu_listwrap">
-<div class="mainMenu_listwrap_item">
-<div class="mainMenu_listwrap_itemTitle">Blog</div>
-<div class="mainMenu_listwrap_itemInfo">近況報告やお知らせ等</div>
-</div>
-</li>
-<li class="mainMenu_listwrap">
-<div class="mainMenu_listwrap_item">
-<div class="mainMenu_listwrap_itemTitle">Contact</div>
-<div class="mainMenu_listwrap_itemInfo">ご連絡はこちらからお願いします</div>
-</div>
-</li>
-</ul>
-</div>
-<div class="mainGallery"></div>
-</div>
-<div class="footer">
-<ul class="sns">
-<li><a href="https://bsky.app/profile/kumapuni.bsky.social"><img src="//web.fc2.com/fc2img/designtemplates/common/icon-tw.svg" class="snsIcon" alt="Twitter" /></a></li>
-<li><a href="https://instagram.com/non.shimomu"><img src="//web.fc2.com/fc2img/designtemplates/common/icon-ig.svg" class="snsIcon" alt="Instagram" /></a></li>
-</ul>
-<div>&copy; 2024 Kumapuni</div>
-<div>copyright 2024 03-01</div>
-</div>
-</div>
-<!--objedt-fit（IE対策）-->
-<p>
-<script src="//cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
-<script>objectFitImages();</script>
-<script>/*IEで固定した背景がカクカクするのを抑える対策*/
-        if(navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./)) {
-        $('body').on("mousewheel", function () {
-        event.preventDefault();
-        var wd = event.wheelDelta;
-        var csp = window.pageYOffset;
-        window.scrollTo(0, csp - wd);
-        });
-        }
-    </script>
-</p>
-<script><!--
-var fc2footerparam = 'charset=' + encodeURIComponent(document.charset ? document.charset : document.characterSet) + '&url=' + encodeURIComponent(document.location) + '&service=0&r=' + Math.floor(Math.random()*99999999999);
-var fc2footertag = "//vip.chps-api.fc2.com/apis/footer/?" + fc2footerparam;
-var script = document.createElement('script');
-script.src = fc2footertag;
-script.charset = "UTF-8";
-script.async = true;
-document.getElementsByTagName('head')[0].appendChild(script);
-//--></script>
-<!-- FC2, inc.-->
-<img src="//media.fc2.com/counter_img.php?id=50" style="visibility:hidden" alt="inserted by FC2 system" width="0" height="0">
-<!-- FC2, inc.--></body>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 header__wrapper">
+          <h1><a href="index.html">くまぷにのお部屋</a></h1>
+          <p id="menubtn">&#9776;</p>
+            <ul id="navmenu">
+              <li><a href="#contents">content</a></li>
+              <li><a href="#illust">illust</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#link">link</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="img/back.jpg" alt="main">
+        <div class="text center black">
+          <!-- ↑白文字ならdivのclassにwhite、黒文字ならblackを指定します -->
+          <strong>くまぷにのお部屋</strong>
+          <p>自由気ままな個人サイトです<br>
+            気が向いたら使ってるみたいな感じです。</p>
+            <a href="#site" class="box1_white">みてみる</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <img src="img/scratch_screen.png" alt="scratch">
+          <div class="text left white">
+            <!-- ↑白文字ならdivのclassにwhite、黒文字ならblackを指定します -->
+            <!-- 著作者：Hello-Pixel／出典：Freepik -->
+            <strong>Scratchやってます</strong>
+            <p>Scratchでプログラミングやってます<br>
+              ぜひ見て行ってみてください！</p>
+              <a href="https://scratch.mit.edu/users/kumapuni/" target="_blank" class="box1_pink">Kumapuni's Scratch</a>
+            </div>
+        </div>
+
+      <div class="swiper-slide">
+        <img src="img/watercolor-texture-background.jpg" alt="">
+        <div class="text right black">
+          <!-- ↑白文字ならdivのclassにwhite、黒文字ならblackを指定します -->
+          <!-- 著作者：Hello-Pixel／出典：Freepik -->
+          <strong></strong>
+          <p>デモで使用していた画像は、配布元の規約により同梱できません。<br>
+            お使いになりたい場合は配布元から直接ダウンロードしてください。</p>
+            <a href="https://girlydrop.com/" target="_blank" class="box1_pink">配布元「GIRLY DROP」</a>
+          </div>
+      </div>
+
+      <div class="swiper-slide">
+        <img src="img/hand_painted_pastel_watercolour_texture_background_2106.jpg" alt="third">
+        <div class="text left white">
+          <!-- ↑白文字ならdivのclassにwhite、黒文字ならblackを指定します -->
+          <!-- 著作者：kjpargeter／出典：Freepik -->
+          <p>ボタン色も、classにwhiteもしくはblackを与えることで<br>
+            色をかえることができます。</p>
+            <a href="#" class="box1_black">みてみる</a>
+          </div>
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12">
+          <h2 id="site">About</h2>
+          <p>くまぷに（のん）が気まぐれで作ったてきとーなサイトです。<br>
+            実験とかするかもしれませんが個人サイトってそういうもんでしょ！？<br>
+            お付き合いいただければ幸いです。
+          </p>
+            <ul>
+              <li><a href="books.html">頒布物一覧ページ</a> - 同人誌の紹介などに。</li>
+              <li><a href="text.html">文章用ページ</a> - 小説作品やレポート報告などに。</li>
+              <li><a href="comic.html">マンガ用ページ</a> - WEB漫画やイラスト展示に。</li>
+            </ul>
+
+          <hr>
+        </div>
+
+
+        <div class="col-md-7">
+          <h2 class="h2-c">What's new?</h2>
+          <dl class="update">
+            <dt>2024.3.15</dt>
+            <dd>ホームページ作りました
+            </dd>
+          </dl>
+        </div>
+
+        <div class="col-md-5">
+          <a class="twitter-timeline" data-height="400" data-height="100%" href="https://twitter.com/Kokocolor_saba">Tweets by gt_gt_do</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+
+        <div class="row">
+        <h2 id="contents">Contents</h2>
+        <div class="col-md-6">
+          <h4>過去のイベント</h4>
+          <ul class="novel-1">
+            <li><a href="text.html">イベント１</a>
+              <span>説明文です</span></li>
+            <li><a href="text.html">イベント２</a>
+              <span>改行すると<br>こんな感じ</span></li>
+            <li><a href="text.html">イベント３</a><span>説明をspanタグで囲ってください</span></li>
+          </ul>
+
+          <h4>もっと過去のイベント</h4>
+          <p>novel-2クラス指定は説明なし、リストアイテムが複数になると区切り線が勝手に入る仕様です。過去作品などにどうぞ</p>
+          <ul class="novel-2">
+            <li><a href="text.html">過去イベント１</a></li>
+            <li><a href="text.html">過去イベント２</a></li>
+            <li><a href="text.html">過去イベント３</a></li>
+            <li><a href="text.html">過去イベント４</a></li>
+            <li><a href="text.html">過去イベント５</a></li>
+          </ul>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6">
+          <h4>レポート漫画</h4>
+          <p>２カラムにもできます。liにclass="new"を与えるとnewマークがつきます</p>
+          <ul class="novel-1">
+            <li><a href="text.html">レポート漫画１</a>
+              <span>あのイベントのレポートです！</span></li>
+            <li><a href="text.html">レポート漫画２</a>
+              <span>このイベントのレポートです！</span></li>
+            <li class="new"><a href="text.html">レポート漫画３</a><span>誠心誠意書いてます！！</span></li>
+          </ul>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-12 margin-top">
+          <h2 id="illust">Illust</h2>
+          <p>サムネイル画像は、100px平方より大きいものを使ってください。css側で100pxに切り抜いて表示されます。画像表示には
+            <a href="https://do.gt-gt.org/product/fuwaimg/" target="_blank">fuwaimg</a>を使っています。liにclass="new"を与えるとnewマークがつきます。</p>
+          <ul class="illust-1">
+            <li><a href="./img/01.jpg" data-fimg="illust" data-fcaption="ここに説明" class="fuwaimg"><img src="./img/01-s.jpg"></a></li>
+            <li><a href="./img/02.jpg" data-fimg="illust" data-fcaption="ここに説明" class="fuwaimg"><img src="./img/02-s.jpg"></a></li>
+            <li class="new"><a href="./img/03.jpg" data-fimg="illust" data-fcaption="ここに説明" class="fuwaimg"><img src="./img/03-s.jpg"></a></li>
+          </ul>
+          <ul class="illust-2">
+            <li><a href="./img/04.jpg" data-fimg="illust2" data-fcaption="ここに説明" class="fuwaimg"><img src="./img/04-s.jpg"></a></li>
+            <li><a href="./img/05.jpg" data-fimg="illust2" data-fcaption="ここに説明" class="fuwaimg"><img src="./img/05-s.jpg"></a></li>
+            <li class="new"><a href="./img/06.jpg" data-fimg="illust2" data-fcaption="ここに説明" class="fuwaimg"><img src="./img/06-s.jpg"></a></li>
+          </ul>
+        </div> <!-- end col-12 -->
+
+        <div class="col-12 margin-top">
+          <h2 id="about">このサイトについて</h2>
+          <p>このサイトはこんなサイトです。<br>
+            Simple Slider!（http://xxx.xxx.jp/）<br>
+            バナー<br>
+            <img src="./img/bn-l.jpg"><img src="./img/bn-m.jpg"><img src="./img/bn-s.jpg"></p>
+        </div> <!-- end col-12 -->
+
+        <div class="col-12 margin-top">
+          <h2 id="link">Link</h2>
+          <p>大好きなサイトさんです。</p>
+          <ul class="link01">
+            <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+            <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+            <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+            <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+            <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+            <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+          </ul>
+
+          <h3>素材サイトさま</h3>
+          <ul class="link02">
+            <li><a href="https://girlydrop.com/" target="_blank">GIRLY DROP</a></li>
+            <li><a href="https://jp.freepik.com/" target="_blank">Freepik</a></li>
+            <li><a href="#" target="_blank">＊＊＊</a></li>
+            <li><a href="#" target="_blank">＊＊＊</a></li>
+          </ul>
+        </div> <!-- end col-12 -->
+
+        <div class="col-12 margin-top">
+          <h2 id="mail">Mail</h2>
+          <p class="margin-bottom">このままでは機能しませんので、<a href="https://www.php-factory.net/" target="_blank">PHP工房様</a>の「Mailform01」などをご利用ください。</p>
+          <form method="post" action="ここにアクション" class="mailform">
+            <input type="text" name="message" placeholder="お名前">
+            <input type="mail" name="message" placeholder="メールアドレス">
+            <textarea rows="5" name="message" placeholder="本文"></textarea>
+            <input type="submit" value="Send">
+          </form>
+
+          <h3 class="margin-top">拍手用フォーム</h3>
+          <form method="post" action="ここにアクション" class="clap">
+            <input type="text" name="message" placeholder="一言いただけると主が飛び跳ねて喜びます！">
+            <input type="submit" value="clap">
+          </form>
+        </div>
+
+      </div> <!-- end row -->
+
+    </div> <!-- end container -->
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <p class="title"><a href="index.html">くまぷにのお部屋</a></p>
+      <p>since 2024.<br>
+      ©kumapuni</p>
+    </div>
+    <div class="bottom">
+      <div class="container">
+        <p class="template">
+        <a href="https://do.gt-gt.org/" target="_blank">template by do.</a>
+      </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: true
+      },
+    })
+  </script>
+  
+  <script src="js/common.js"></script>
+  <script src="js/scrollbooster.min.js" charset="utf-8"></script>
+  <script src="js/fuwaimg.js" charset="utf-8"></script>
+</body>
 
 </html>
